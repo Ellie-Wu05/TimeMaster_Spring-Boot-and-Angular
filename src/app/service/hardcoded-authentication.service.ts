@@ -14,6 +14,7 @@ export class HardcodedAuthenticationService {
       // console.log(this.isUserLoggedIn());
       return true;
   } else {
+    
     return false
   }
 }

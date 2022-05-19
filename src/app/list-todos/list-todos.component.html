@@ -4,15 +4,15 @@
     <thead>
         <tr>
             <th>Description</th>
-            <th>Targer Date</th>
+            <th>Target Date</th>
             <th>is Completed？</th>
             
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let todo of todos">
-        <td>{{todo.describption}}</td>
-        <td>{{todo.targerDate | date}}</td>  <!--pipe-->
+        <td>{{todo.description}}</td>
+        <td>{{todo.targetDate | date}}</td>  <!--pipe-->
         <td>{{todo.done}}</td>
         </tr>
     </tbody>

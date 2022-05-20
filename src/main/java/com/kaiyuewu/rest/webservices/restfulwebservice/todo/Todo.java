@@ -1,8 +1,15 @@
 package com.kaiyuewu.rest.webservices.restfulwebservice.todo;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Todo {
-    private long id;
+
+    @Id
+    @GeneratedValue
+    private Long id;
     private String username;
     private String description;
     private Date targetDate;
@@ -20,7 +27,7 @@ public class Todo {
         this.isDone = isDone;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -58,6 +65,28 @@ public class Todo {
 
     public void setDone(boolean done) {
         isDone = done;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (int) (id ^ (id >>> 32));
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Todo other = (Todo) obj;
+        if (id != other.id)
+            return false;
+        return true;
     }
 
 

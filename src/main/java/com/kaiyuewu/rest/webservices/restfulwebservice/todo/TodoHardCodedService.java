@@ -10,12 +10,12 @@ import java.util.List;
 public class TodoHardCodedService {
 
     private static List<Todo> todos = new ArrayList<Todo>();
-    private static int idCounter = 0;
+    private static long idCounter = 0;
 
     static {
-        todos.add(new Todo(++idCounter, "Kaiyue Wu", "Cook Class", new Date(), false));
+        todos.add(new Todo(++idCounter, "Kaiyue Wu", "Enter Your Todo...", new Date(), false));
         todos.add(new Todo(++idCounter, "Kaiyue Wu", "Dance Class", new Date(), false));
-        todos.add(new Todo(++idCounter, "Kaiyue Wu", "Swimming Class", new Date(), false));
+        todos.add(new Todo(++idCounter, "Kaiyue Wu", "Cook Class", new Date(), false));
     }
 
     public List<Todo> findAll() {
@@ -44,7 +44,7 @@ public class TodoHardCodedService {
     }
 
     public Todo saveTodo(Todo todo){
-        if(todo.getId() ==-1){
+        if(todo.getId() ==-1 || todo.getId()==0){
             todo.setId(++idCounter);
             todos.add(todo);
         }else{

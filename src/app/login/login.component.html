@@ -1,13 +1,22 @@
-<h1>Login</h1>
 
-<div class="container">
-    <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div>
-    <div>
-        User Name: <input type="text" name="username" [(ngModel)]="username">
-        Password: <input type="password" name="password" [(ngModel)]='password'>
 
-<!--    <button (click)=handleLogin() class="btn btn-success">Login</button> -->
-        <button (click)=handleJWTAuthLogin() class="btn btn-success">Login</button>
-
+    <div class="jumbotron shadow p-4 mb-4 bg-white">
+        <h1 class="display-4" style="text-align: center">Welcome!</h1>
+        <p class="lead" style="text-align: center">This is a Todo App helps you to manage your tasks!</p>
+        <hr class="my-4">
     </div>
-</div>
+
+    <div class="container mt-5" style="text-align: center">
+        <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div>
+        <div class="group">
+
+            User Name: <input type="text" name="username" [(ngModel)]="username">
+
+            Password: <input type="password" name="password" [(ngModel)]='password'>
+
+            <span class="px-3" style="width: 90px;">
+                <!--    <button (click)=handleLogin() class="btn btn-success">Login</button> -->
+                <button (click)=handleJWTAuthLogin() class="btn btn-success">Login</button>
+            </span>
+        </div>
+    </div>

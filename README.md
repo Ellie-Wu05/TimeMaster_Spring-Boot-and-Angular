@@ -1,6 +1,22 @@
 # Todo APP 
 ## Java Full Stack Project with Spring Boot and Angular
 
+## TodoList Page
+![TodoList](https://github.com/Ellie-Wu05/Todo/blob/main/images/TodoList.jpg)
+
+## Welcome Page
+![Welcome](https://github.com/Ellie-Wu05/Todo/blob/main/images/WelcomePage.jpg)
+
+## Edit Pagw
+![Update/Edit](https://github.com/Ellie-Wu05/Todo/blob/main/images/Update:AddPage.jpg)
+
+## Login Image
+![Login](https://github.com/Ellie-Wu05/Todo/blob/main/images/LoginPage.jpg)
+
+## Logout Image
+![Logout](https://github.com/Ellie-Wu05/Todo/blob/main/images/LogoutPage.jpg)
+
+
 Covered Techniques and frameworks:
 - Angular
 - TypeScript, 
@@ -16,4 +32,6 @@ IDEs:
 - Visual Studio Code (TypeScript IDE), 
 - IntelliJ (Java IDE),
 - Tomcat Embedded Web Server.
+
+
 

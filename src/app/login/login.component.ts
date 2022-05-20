@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BasicAuthenticationService } from '../service/basic-authentication.service';
 import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private router:Router,
-      private hardcodedAuthenticationService:HardcodedAuthenticationService) { }
+      private hardcodedAuthenticationService:HardcodedAuthenticationService,
+      private basicAuthService:BasicAuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +36,26 @@ export class LoginComponent implements OnInit {
   } else{
     this.invalidLogin=true
   }
+
+  }
+
+  handleJWTAuthLogin(){
+
+    // console.log(this.username);
+  // if(this.username==='Kaiyue Wu' && this.password==='123456'){
+    this.basicAuthService.executeJWTAuthenticationService(this.username,this.password)
+      .subscribe(
+        data => {
+          // console.log(data)
+          // redirect to welcome page
+          this.router.navigate(['welcome',this.username])
+          this.invalidLogin= false
+        },
+        error => {
+          // console.log(error)
+          this.invalidLogin=true
+        }
+      )
 
   }
 
